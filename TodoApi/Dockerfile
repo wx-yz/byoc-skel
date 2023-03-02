@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy AS build
 
 ARG USERNAME=user123
-ARG USER_UID=1000
+ARG USER_UID=10001
 ARG USER_GID=$USER_UID
 
 RUN groupadd --gid $USER_GID $USERNAME \
