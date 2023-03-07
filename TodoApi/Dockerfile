@@ -11,16 +11,16 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0-jammy-amd64
 WORKDIR /todoapi
 COPY --from=build /source/todoapi .
 
-ARG USERNAME=appuser
-ARG USER_UID=10001
-ARG USER_GID=$USER_UID
+#ARG USERNAME=appuser
+#ARG USER_UID=10001
+#ARG USER_GID=$USER_UID
 
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+#RUN groupadd --gid $USER_GID $USERNAME \
+#    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 # RUN useradd -u 10001 10001
 
-USER $USERNAME
+USER 10001
 
 ENTRYPOINT ["dotnet", "TodoApi.dll"]
 
