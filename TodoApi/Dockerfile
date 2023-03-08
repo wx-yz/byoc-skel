@@ -20,7 +20,7 @@ COPY --from=build /source/todoapi .
 
 # RUN useradd -u 10001 10001
 
-USER 10001
 
 ENTRYPOINT ["dotnet", "TodoApi.dll"]
 
+USER 10001
